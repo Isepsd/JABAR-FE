@@ -1,0 +1,855 @@
+@import "./function/index";
+@import "./mixin/index";
+@import "./library/index";
+@import "./themes/index";
+
+@import "./pages/signin";
+@import "./pangandaran";
+@import "./header";
+@import "./pagination";
+@import "./sidenav";
+@import "./utilities";
+@import "./loader";
+@import "./progressbar";
+@import "./loaders/index";
+@import "./animation";
+@import "./preloader";
+
+.disabled-scroll {
+  overflow: hidden !important;
+}
+.form-select:disabled {
+  background-color: var(--black-50);
+}
+.form-control:disabled,
+.form-control[readonly] {
+  color: #646466;
+}
+
+.image-profile-user {
+  width: 160.5px;
+  height: 160.5px;
+  object-fit: cover;
+}
+
+.image-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/** TASKS */
+@include media-breakpoint-down(sm) {
+  .sub-header {
+    padding-left: 0 !important;
+  }
+
+  .task-details {
+    width: 100% !important;
+  }
+}
+
+/** MENU MANAGEMENT */
+.menu-management {
+  .accordion-item {
+    border: none;
+  }
+
+  .accordion-header {
+    cursor: pointer;
+    background: var(--primary-800);
+    color: var(--white);
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: var(--white);
+    background-color: var(--primary-800);
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+  }
+
+  .accordion-body {
+    padding-top: 0.5rem;
+    background: var(--black-25);
+  }
+
+  .accordion-body > div {
+    background: var(--white);
+    margin-bottom: 0.15rem;
+  }
+
+  .nav-link {
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.1rem;
+    border-radius: 0;
+    font-weight: 400;
+    border-left: 3px solid var(--primary);
+    color: var(--black-600);
+
+    &:not(.no-hover-bg) {
+      &:hover,
+      &:focus {
+        color: var(--black) !important;
+        background-color: var(--primary-10);
+      }
+    }
+
+    &.active:not(.no-hover-bg) {
+      color: var(--black) !important;
+      background-color: var(--primary-10);
+      border-color: var(--primary);
+    }
+  }
+
+  .accordion-item:last-of-type .accordion-button.collapsed {
+    background: var(--white);
+  }
+
+  .accordion-button::after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAjUlEQVRIie2TQQqEMBAEO/sxn+PRp6w56WutvQwaRgNRI7iQPgUy6eoeiNRUU5jOvPk8FaYBGuDfAUAAulIToANC6XAAIrAAg7vb/WSgt9n5CJJbEZKCpK+HeHNJk82Wy1qMFnhtkjZIkpNLfxrCpnvmDhITCO4cL5tnmqS6nrwAUs/8AFLf3EGeMX+tfmvlA0hAL4ukAAAAAElFTkSuQmCC);
+    background-color: var(--primary-800);
+  }
+
+  .accordion-button:not(.collapsed)::after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAjUlEQVRIie2TQQqEMBAEO/sxn+PRp6w56WutvQwaRgNRI7iQPgUy6eoeiNRUU5jOvPk8FaYBGuDfAUAAulIToANC6XAAIrAAg7vb/WSgt9n5CJJbEZKCpK+HeHNJk82Wy1qMFnhtkjZIkpNLfxrCpnvmDhITCO4cL5tnmqS6nrwAUs/8AFLf3EGeMX+tfmvlA0hAL4ukAAAAAElFTkSuQmCC) !important;
+  }
+
+  .icon {
+    width: 1.6rem;
+    display: block;
+    float: left;
+  }
+}
+
+.elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+body[passwd-change-warning="true"] {
+  .sidenav {
+    margin-top: 3.65rem !important;
+  }
+}
+
+// html[theme-mode=dark] body{
+//   --body-bg: var(--black-50) !important;
+// }
+
+.border-black {
+  border-color: 1px var(--black) !important;
+
+  td,
+  th {
+    border-color: var(--black) !important;
+  }
+}
+
+// JQX BUTTON NANANG MODIF
+.jqx-button-custom {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.jqx-button-custom span,
+.jqx-button-custom i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.jqx-button-custom i {
+  opacity: 0;
+  font-size: 16px;
+  /* Ukuran ikon */
+  transform: translateX(-100%) translateY(-50%);
+}
+
+.jqx-button-custom:hover i {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.jqx-button-custom:hover span {
+  opacity: 0;
+  transform: translateX(100%) translateY(-50%);
+}
+
+// jqwidget
+.jqx-item.text-black div {
+  color: var(--black);
+}
+
+.jqx-widget-header {
+  background: var(--white);
+}
+
+.jqx-widget-header-light {
+  color: var(--black);
+}
+
+.jqx-widget-content,
+.jqx-grid-cell-pinned,
+.jqx-grid-cell {
+  background: var(--white);
+  color: var(--black);
+}
+
+.jqx-widget-light .jqx-grid-cell {
+  color: var(--black);
+}
+
+.jqx-grid-cell-hover-light {
+  color: var(--black);
+}
+
+.jqx-widget-light .jqx-grid-column-header-light {
+  color: var(--black);
+}
+
+.jqx-widget-light .jqx-grid-column-header,
+.jqx-widget-light .jqx-grid-group-cell {
+  background: var(--white);
+}
+
+// .jqx-input-light input,
+// input[type="text"].jqx-input-light,
+// input[type="password"].jqx-input-light,
+// input[type="text"].jqx-widget-content-light,
+// input[type="textarea"].jqx-widget-content-light,
+// textarea.jqx-input-light {
+//   background: var(--white);
+//   color: var(--white);
+// }
+
+.jqx-button-light,
+.jqx-button-light.jqx-fill-state-normal-light {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.green-background {
+  background-color: rgb(152, 251, 152);
+  color: black !important;
+}
+
+.yellow-background {
+  background-color: yellow;
+  color: black !important; /* Hitam agar terbaca */
+}
+
+.red-background {
+  background-color: rgb(240, 128, 128);
+  color: black !important;
+}
+.grey-background {
+  background-color: rgba(134, 134, 134, 0.877) ;
+  color: black !important;
+}
+
+/* Theme light */
+.light-theme {
+  --smart-primary-rgb: 0, 92, 153;
+  --smart-ui-state-active: rgba(0, 92, 153, 1);
+  --smart-ui-state-border-active: rgba(0, 92, 153, 1);
+  --smart-primary: rgba(0, 92, 153, 1);
+  --smart-ui-state-color-active: rgba(255, 255, 255, 1);
+  --smart-primary-color: rgba(255, 255, 255, 1);
+  --smart-background-color: rgba(90, 90, 90, 1);
+  --smart-background: rgba(254, 254, 254, 1);
+  --smart-surface-color: rgba(50, 50, 50, 1);
+  --smart-surface: rgba(245, 245, 245, 1);
+  --smart-border: rgba(224, 224, 224, 1);
+  --smart-border-top-left-radius: 4px;
+  --smart-border-top-right-radius: 4px;
+  --smart-border-bottom-left-radius: 4px;
+  --smart-border-bottom-right-radius: 4px;
+  --smart-border-radius: 4px;
+  --smart-ui-state-color-hover: rgba(51, 51, 51, 1);
+  --smart-ui-state-border-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-color-selected: rgba(0, 92, 153, 1);
+  --smart-ui-state-selected: rgba(0, 92, 153, 0.1);
+  --smart-ui-state-color-focus: rgba(0, 0, 0, 1);
+  --smart-ui-state-focus: rgba(224, 224, 224, 1);
+  --smart-outline: rgba(224, 224, 224, 1);
+  --smart-font-size: 14px;
+  --smart-font-family: "Roboto", "Helvetice Neue", sans-serif;
+}
+
+@media (min-width: 1400px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 100%;
+  }
+}
+
+.light-theme {
+  --smart-primary-rgb: 0, 92, 153;
+  --smart-primary-color: #005c99;
+  --smart-ui-state-active: #005c99;
+  --smart-ui-state-border-active: #005c99;
+  --smart-ui-state-color-active: #ffffff;
+  --smart-background-color: #5a5a5a;
+  --smart-background: #f5f5f5;
+  --smart-surface-color: #323232;
+  --smart-surface: #f5f5f5;
+  --smart-border: #e0e0e0;
+  --smart-border-radius: 4px;
+  --smart-border-top-left-radius: 4px;
+  --smart-border-top-right-radius: 4px;
+  --smart-border-bottom-left-radius: 4px;
+  --smart-border-bottom-right-radius: 4px;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-border-hover: #ebebeb;
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-color-selected: #005c99;
+  --smart-ui-state-selected: rgba(0, 92, 153, 0.1);
+  --smart-ui-state-color-focus: #000000;
+  --smart-ui-state-focus: #e0e0e0;
+  --smart-outline: #e0e0e0;
+  --smart-font-size: 14px;
+  --smart-font-family: "Roboto", "Helvetice Neue", sans-serif;
+}
+
+.light-theme {
+  --smart-font-family: "Roboto", "Helvetice Neue", sans-serif;
+  --smart-font-size: 14px;
+  --smart-font-family-icon: smart-icons;
+  --smart-font-family-src: ;
+}
+
+smart-grid.light-theme {
+  --smart-primary: #005c99;
+  --smart-ui-state-active: #005c99;
+  --smart-ui-state-border-active: #005c99;
+  --smart-primary-color: #ffffff;
+  --smart-ui-state-color-active: #ffffff;
+  --smart-background-color: #5a5a5a;
+  --smart-background: #f5f5f5;
+  --smart-surface-color: #323232;
+  --smart-surface: #f5f5f5;
+  --smart-border: #e0e0e0;
+  --smart-border-radius: 4px;
+  --smart-border-top-left-radius: 4px;
+  --smart-border-top-right-radius: 4px;
+  --smart-border-bottom-left-radius: 4px;
+  --smart-border-bottom-right-radius: 4px;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-border-hover: #ebebeb;
+  --smart-ui-state-color-selected: #005c99;
+  --smart-ui-state-selected: rgba(0, 92, 153, 0.1);
+  --smart-ui-state-color-focus: #000000;
+  --smart-ui-state-focus: #e0e0e0;
+  --smart-outline: #e0e0e0;
+}
+
+smart-grid.light-theme {
+  --smart-grid-cell-vertical-border: #e0e0e0;
+  --smart-grid-cell-horizontal-border: #e0e0e0;
+  --smart-grid-cell-header-vertical-border: #e0e0e0;
+  --smart-grid-cell-header-horizontal-border: #e0e0e0;
+  --smart-grid-cell-horizontal-border-opacity-selected: 0.3;
+  --smart-grid-cell-vertical-border-opacity-selected: 0.3;
+  --smart-grid-cell-background-freeze: #f5f5f5;
+  --smart-grid-cell-color-freeze: #323232;
+  --smart-grid-cell-font-size: inherit;
+  --smart-grid-cell-font-weight: inherit;
+}
+
+smart-grid.light-theme {
+  --smart-grid-row-height: 30px;
+  --smart-grid-column-header-height: 48px;
+}
+
+smart-grid.light-theme .smart-grid-column-header {
+  --smart-surface-color: #323232;
+  --smart-surface: #f5f5f5;
+  --smart-grid-column-horizontal-border: #e0e0e0;
+  --smart-grid-column-vertical-border: #e0e0e0;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-border-hover: #ebebeb;
+  --smart-grid-column-font-size: inherit;
+  --smart-grid-column-font-weight: inherit;
+}
+
+smart-grid.light-theme .smart-action-button {
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-border-hover: #ebebeb;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-border-hover: #ebebeb;
+  --smart-ui-state-focus: #e0e0e0;
+  --smart-ui-state-color-focus: #000000;
+  --smart-ui-state-border-focus: #e0e0e0;
+}
+
+.smart-grid-column-menu,
+.smart-grid-column-menu .smart-filter-container {
+  --smart-background: #f5f5f5;
+  --smart-background-color: #5a5a5a;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-border-hover: #ebebeb;
+}
+
+smart-grid.light-theme .smart-grid-pager,
+smart-grid.light-theme .smart-grid-pager smart-pager.light-theme {
+  --smart-primary: #005c99;
+  --smart-ui-state-active: #005c99;
+  --smart-ui-state-border-active: #005c99;
+  --smart-primary-color: #ffffff;
+  --smart-ui-state-color-active: #ffffff;
+  --smart-surface-color: #323232;
+  --smart-surface: #f5f5f5;
+  --smart-ui-state-color-hover: #333333;
+  --smart-ui-state-hover: #ebebeb;
+  --smart-ui-state-border-hover: #ebebeb;
+}
+
+smart-grid.light-theme .smart-grid-pager smart-pager.light-theme,
+smart-grid.light-theme
+  .smart-grid-pager
+  smart-pager.light-theme
+  smart-pager.light-theme {
+  --smart-item-border-top-left-radius: 100%;
+  --smart-item-border-bottom-left-radius: 100%;
+  --smart-item-border-top-right-radius: 100%;
+  --smart-item-border-bottom-right-radius: 100%;
+}
+
+smart-grid.light-theme {
+  --smart-alternation-index0-background: #f5f5f5;
+  --smart-alternation-index0-color: #323232;
+}
+
+.dark-theme {
+  /* Dark theme variables */
+  --smart-primary: rgba(0, 92, 153, 1);
+  --smart-ui-state-active: rgba(0, 92, 153, 1);
+  --smart-ui-state-border-active: rgba(0, 92, 153, 1);
+  --smart-primary-color: rgba(255, 255, 255, 1);
+  --smart-ui-state-color-active: rgba(255, 255, 255, 1);
+  --smart-background-color: rgba(254, 254, 254, 1);
+  --smart-background: rgba(36, 36, 36, 1);
+  --smart-surface-color: rgba(254, 254, 254, 1);
+  --smart-surface: rgba(51, 51, 51, 1);
+  --smart-border: rgba(31, 31, 31, 1);
+  --smart-border-radius: 4px;
+  --smart-border-top-left-radius: 4px;
+  --smart-border-top-right-radius: 4px;
+  --smart-border-bottom-left-radius: 4px;
+  --smart-border-bottom-right-radius: 4px;
+  --smart-ui-state-color-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-color-selected: rgba(0, 92, 153, 1);
+  --smart-ui-state-selected: rgba(0, 92, 153, 0.1);
+  --smart-ui-state-color-focus: rgba(235, 235, 235, 1);
+  --smart-ui-state-focus: rgba(68, 68, 68, 1);
+  --smart-outline: rgba(68, 68, 68, 1);
+}
+
+.dark-theme.smart-grid {
+  --smart-grid-cell-vertical-border: rgba(31, 31, 31, 1);
+  --smart-grid-cell-horizontal-border: rgba(31, 31, 31, 1);
+  --smart-grid-cell-header-vertical-border: rgba(31, 31, 31, 1);
+  --smart-grid-cell-header-horizontal-border: rgba(31, 31, 31, 1);
+  --smart-grid-cell-horizontal-border-opacity-selected: 0.3;
+  --smart-grid-cell-vertical-border-opacity-selected: 0.3;
+  --smart-grid-cell-background-freeze: rgba(51, 51, 51, 1);
+  --smart-grid-cell-color-freeze: rgba(254, 254, 254, 1);
+  --smart-grid-cell-font-size: inherit;
+  --smart-grid-cell-font-weight: inherit;
+}
+
+.dark-theme.smart-grid {
+  --smart-grid-row-height: 30px;
+  --smart-grid-column-header-height: 48px;
+}
+
+.dark-theme .smart-grid .smart-grid-column-header {
+  --smart-surface-color: rgba(254, 254, 254, 1);
+  --smart-surface: rgba(51, 51, 51, 1);
+  --smart-grid-column-horizontal-border: rgba(31, 31, 31, 1);
+  --smart-grid-column-vertical-border: rgba(31, 31, 31, 1);
+  --smart-ui-state-color-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+  --smart-grid-column-font-size: inherit;
+  --smart-grid-column-font-weight: inherit;
+}
+
+.dark-theme .smart-grid .smart-action-button {
+  --smart-ui-state-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-color-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-focus: rgba(68, 68, 68, 1);
+  --smart-ui-state-color-focus: rgba(235, 235, 235, 1);
+  --smart-ui-state-border-focus: rgba(68, 68, 68, 1);
+}
+
+.dark-theme .smart-grid .smart-grid-column-menu,
+.dark-theme .smart-grid .smart-grid-column-menu .smart-filter-container {
+  --smart-background: rgba(36, 36, 36, 1);
+  --smart-background-color: rgba(254, 254, 254, 1);
+  --smart-ui-state-color-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+}
+
+.dark-theme .smart-grid .smart-grid-pager,
+.dark-theme .smart-grid .smart-grid-pager .smart-pager.dark-theme {
+  --smart-primary: rgba(0, 92, 153, 1);
+  --smart-ui-state-active: rgba(0, 92, 153, 1);
+  --smart-ui-state-border-active: rgba(0, 92, 153, 1);
+  --smart-primary-color: rgba(255, 255, 255, 1);
+  --smart-ui-state-color-active: rgba(255, 255, 255, 1);
+  --smart-surface-color: rgba(254, 254, 254, 1);
+  --smart-surface: rgba(51, 51, 51, 1);
+  --smart-ui-state-color-hover: rgba(235, 235, 235, 1);
+  --smart-ui-state-hover: rgba(68, 68, 68, 1);
+  --smart-ui-state-border-hover: rgba(68, 68, 68, 1);
+}
+
+.dark-theme .smart-grid .smart-grid-pager .smart-pager.dark-theme,
+.dark-theme
+  .smart-grid
+  .smart-grid-pager
+  .smart-pager.dark-theme
+  .smart-pager.dark-theme {
+  --smart-item-border-top-left-radius: 100%;
+  --smart-item-border-bottom-left-radius: 100%;
+  --smart-item-border-top-right-radius: 100%;
+  --smart-item-border-bottom-right-radius: 100%;
+}
+
+.dark-theme .smart-grid {
+  --smart-alternation-index0-background: rgba(51, 51, 51, 1);
+  --smart-alternation-index0-color: rgba(254, 254, 254, 1);
+}
+
+.custom-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode toolbar styling */
+.dark-theme .custom-toolbar {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Light mode toolbar styling */
+.light-theme .custom-toolbar {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Toolbar buttons */
+.toolbar-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Dark mode button styling */
+.dark-theme .toolbar-button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Light mode button styling */
+.light-theme .toolbar-button {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+/* Button icons */
+.toolbar-button .icon {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Button icon styling */
+.toolbar-button .icon i {
+  margin-right: 4px;
+  font-size: 16px;
+}
+
+/* Button hover effect */
+.toolbar-button:hover {
+  opacity: 0.8;
+}
+
+.dark-theme h5 {
+  color: white;
+}
+
+/* Tambahkan gaya ini jika belum ada di file CSS Anda */
+/* styles.css atau file CSS Anda */
+.chart-container {
+  height: 53rem; /* Ubah sesuai kebutuhan */
+}
+
+
+
+.sub-rows-container {
+  max-height: 100px; /* Sesuaikan tinggi maksimum sesuai kebutuhan */
+  overflow-y: auto; /* Aktifkan scrolling vertikal */
+  border: 1px solid #ddd; /* Opsional: untuk visibilitas */
+  padding: 4px; /* Opsional: untuk spacing */
+  box-sizing: border-box; /* Memastikan padding dan border dimasukkan dalam total ukuran elemen */
+}
+
+
+.tree-container {
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  max-height: 400px; /* Adjust based on your design */
+}
+
+
+.tree-row-content {
+  padding: 8px;
+  border: 1px solid #ddd; /* Optional: for visibility */
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+}
+
+.sub-rows-item {
+  margin-bottom: 4px; /* Opsional: jarak antar item */
+}
+
+
+/* Tambahkan atau modifikasi gaya CSS Anda untuk grafik */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap; /* Membolehkan grafik membungkus ke baris baru */
+  gap: 1rem; /* Jarak antar grafik */
+}
+
+.chart-item {
+  flex: 1 1 300px; /* Ukuran minimum dan maksimum grafik */
+  max-width: 100%; /* Membatasi lebar grafik agar tidak melebihi wadah */
+  box-sizing: border-box; /* Menghitung padding dan border dalam lebar elemen */
+}
+
+
+.tab-list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tab-list li {
+  margin-right: 10px;
+}
+
+
+/* CSS untuk memposisikan tab utama di kanan dan tab sub di kiri */
+.tabs-container .nav-tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0; /* Menghilangkan margin bawah default jika perlu */
+}
+
+.tabs-container .nav-item {
+  margin-left: 10px; /* Spasi antara tab utama */
+}
+
+.tabs-container .nav-link {
+  border: 1px solid #ddd; /* Menambahkan border jika diinginkan */
+  border-radius: 4px; /* Mengatur sudut border */
+}
+
+.sub-tabs .nav-tabs {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sub-tabs .nav-item {
+  margin-right: 10px; /* Spasi antara tab sub */
+}
+
+// button jqx
+/* Container for action buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+ 
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line if necessary */
+  min-width: 370px; /* Minimum width to ensure space for buttons */
+  max-width: 600px; /* Maximum width to prevent excessive space */
+}
+
+/* Base styling for action buttons */
+.action-btn {
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+  display: flex; /* Ensure text and icon align properly */
+
+}
+
+/* Hover and active states */
+.action-btn:hover {
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.action-btn:active {
+  transform: scale(0.95); /* Slightly shrink button on click */
+}
+
+/* Disabled button state */
+.action-btn:disabled {
+  opacity: 0.5; /* Change the opacity to visually indicate it's disabled */
+  cursor: not-allowed;
+}
+
+/* Specific button styles */
+.add-btn {
+  background-color: #4CAF50; /* Green */
+}
+
+.add-btn:hover {
+  background-color: #45A049; /* Slightly darker green on hover */
+}
+
+.edit-btn {
+  background-color: #2196F3; /* Blue */
+}
+
+.edit-btn:hover {
+  background-color: #0B79D0; /* Slightly darker blue on hover */
+}
+
+.view-btn {
+  background-color: #607a8f; /* Gray-Blue */
+}
+
+.view-btn:hover {
+  background-color: #506060; /* Slightly darker gray-blue for hover */
+}
+
+.posting-btn {
+  background-color: #607a8f; /* Gray-Blue */
+}
+
+.posting-btn:hover {
+  background-color: #506060; /* Slightly darker gray-blue for hover */
+}
+
+.delete-btn {
+  background-color: #f44336; /* Red */
+}
+
+.delete-btn:hover {
+  background-color: #da190b; /* Darker red on hover */
+}
+
+/* Space between icon and text */
+.action-btn i {
+  margin-left: 5px; /* Adjust this value to set the desired spacing between text and icon */
+}
+
+
+
+.narrow-column {
+  width: 300px; /* Sesuaikan lebar sesuai kebutuhan */
+}
+
+.form-control-wrapper {
+  width: 100%; /* Pastikan Form.Control memenuhi lebar kolom */
+}
+
+
+.wide-column {
+  width: 200px; /* Atur sesuai kebutuhan */
+}
+
+
+
+.wide-table {
+  width: 100%; /* Makes the table take up the full width of its container */
+  table-layout: auto; /* Adjusts columns to take up more space */
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+// .narrow-column input[type="checkbox"] {
+//   position: sticky;
+//   left: 0;
+//   z-index: 2;
+//   background-color: white; /* Untuk mencegah checkbox tertutup oleh elemen lain */
+// }
+
+.auto-width-column {
+  width: auto;
+  min-width: 150px; /* Atur sesuai kebutuhan */
+}
+.auto-width-check {
+  width: auto;
+  min-width: 60px; /* Atur sesuai kebutuhan */
+}
+.auto-width-arus {
+  width: auto;
+  min-width: 80px; /* Atur sesuai kebutuhan */
+}
+.auto-width-select {
+  width: auto;
+  min-width: 200px; /* Atur sesuai kebutuhan */
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Mengaktifkan scrolling horizontal */
+  overflow-y: hidden; /* Menyembunyikan scrollbar vertikal */
+  position: relative; /* Ini memastikan dropdown berada di posisi yang tepat */
+}
+
+
+input, textarea {
+  color: black; /* Pastikan warna teks tidak tersembunyi */
+  background-color: white; /* Pastikan latar belakang tidak sama dengan warna teks */
+}

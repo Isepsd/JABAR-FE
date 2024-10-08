@@ -1,0 +1,800 @@
+@import '~smart-webcomponents-react/source/styles/smart.default.css';
+/* This is the CSS used in the demo */
+body {
+    color: black;
+}
+
+.button-demo {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button-demo label {
+    font-size: 18px;
+    font-weight: normal;
+    font-family: auto;
+}
+
+.demo-buttons-group {
+    margin-top: 20px;
+}
+
+/* Icon buttons */
+smart-button.btn {
+    margin: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    --smart-button-opacity-focus: initial;
+    --smart-button-opacity-hover: initial;
+    --smart-button-opacity-active: initial;
+}
+
+smart-button.btn button.smart-button {
+    padding: 25px 60px 25px 120px;
+    outline: none;
+}
+
+/* General button style */
+smart-button.btn {
+    border: none;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+smart-button.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+/* Icon separator */
+smart-button.btn-sep:before {
+    background: rgba(0,0,0,0.15);
+}
+
+/* Button 1 */
+smart-button.btn-1 {
+    background: #3498db;
+    color: #fff;
+}
+
+smart-button.btn-1:hover {
+    background: #2980b9;
+}
+
+smart-button.btn-1:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+smart-button.btn-1:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 2 */
+smart-button.btn-2 {
+    background: #2ecc71;
+    color: #fff;
+}
+
+smart-button.btn-2:hover {
+    background: #27ae60;
+}
+
+smart-button.btn-2:active {
+    background: #27ae60;
+    top: 2px;
+}
+
+smart-button.btn-2:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 3 */
+smart-button.btn-3 {
+    background: #e74c3c;
+    color: #fff;
+}
+
+smart-button.btn-3:hover {
+    background: #c0392b;
+}
+
+smart-button.btn-3:active {
+    background: #c0392b;
+    top: 2px;
+}
+
+smart-button.btn-3:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Button 4 */
+smart-button.btn-4 {
+    background: #34495e;
+    color: #fff;
+}
+
+smart-button.btn-4:hover {
+    background: #2c3e50;
+}
+
+smart-button.btn-4:active {
+    background: #2c3e50;
+    top: 2px;
+}
+
+smart-button.btn-4:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+/* Icons */
+.icon-cart:before {
+    content: "\f07a";
+    z-index: 1;
+}
+
+.icon-heart:before {
+    content: "❤";
+    z-index: 1;
+}
+
+.icon-info:before {
+    content: "\f05a";
+    z-index: 1;
+}
+
+.icon-send:before {
+    content: "\f1d8";
+    z-index: 1;
+}
+
+// dialog css
+.custom-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.custom-dialog {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dialog button {
+    margin-top: 10px; /* Tambahkan jarak antara tombol */
+}
+
+
+.ok,
+.cancel {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 10px;
+}
+
+
+
+
+//button smart animation
+smart-button.button-concept {
+    width: auto;
+    height: auto;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    background: transparent;
+    --smart-button-opacity-focus: initial;
+    --smart-button-opacity-hover: initial;
+    --smart-button-opacity-active: initial;
+}
+
+smart-button.button-concept button {
+    padding: 0;
+}
+
+/* Main Styles */
+
+
+smart-button.button-concept .button-clear {
+    display: flex;
+    background-color: #979291; /* Default color */
+    width: 168px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+smart-button.button-concept .button-refresh {
+    display: flex;
+    background-color: #979291; /* Default color */
+    width: 130px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button span,
+smart-button.button-concept .button .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+smart-button.button-concept .button span {
+    width: auto; /* Set width to auto */
+    line-height: inherit;
+    font-size: 10px; /* Adjusted font size */
+    text-transform: uppercase;
+    margin-right: 10px; /* Added margin for space around text */ /* Ini mengatur jarak antara teks dan garis */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+
+smart-button.button-concept .button span:after {
+    content: '';
+    background-color: #f3f3f8;
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: -6px; /* Adjusted position to ensure spacing */ /* Ini mengatur posisi garis */
+}
+
+smart-button.button-concept .button .icon {
+    width: 20px; /* Set width for icon */
+    height: 100%; /* Match height */
+    margin-left: 2px; /* Increased margin for spacing */ /* Ini mengatur jarak antara garis dan ikon */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button .icon .fa {
+    font-size: 12px; /* Adjusted font size */
+    vertical-align: middle;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+smart-button.button-concept .button .icon .fa-check {
+    display: none;
+}
+
+smart-button.button-concept .button.success span,
+smart-button.button-concept .button:hover span {
+    left: -100%; /* Adjusted left to fit the icon */
+    width: 0 !important;
+    opacity: 0;
+}
+
+smart-button.button-concept .button.success .icon,
+smart-button.button-concept .button:hover .icon {
+    width: 100%;
+}
+
+smart-button.button-concept .button.success .icon .fa,
+smart-button.button-concept .button:hover .icon .fa {
+    font-size: 16px; /* Adjusted font size */
+}
+
+smart-button.button-concept .button.success {
+    background-color: #27ae60;
+}
+
+smart-button.button-concept .button.success .icon .fa-remove {
+    display: none;
+}
+
+smart-button.button-concept .button.success .icon .fa-check {
+    display: inline-block;
+}
+
+smart-button.button-concept .button:hover {
+    opacity: .9;
+}
+
+smart-button.button-concept .button:active {
+    opacity: 1;
+}
+
+
+
+//primary
+
+
+smart-button.button-concept .button-primary {
+    padding: 0;
+}
+
+/* Main Styles */
+
+
+smart-button.button-concept .button-primary {
+    display: flex;
+    background-color:  #3498db; /* Default color */
+    width: 130px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary span,
+smart-button.button-concept .button-primary .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+smart-button.button-concept .button-primary span {
+    width: auto; /* Set width to auto */
+    line-height: inherit;
+    font-size: 10px; /* Adjusted font size */
+    text-transform: uppercase;
+    margin-right: 13px; /* Added margin for space around text */ /* Ini mengatur jarak antara teks dan garis */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary span:after {
+    content: '';
+    background-color: #f3f3f8;
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: -6px; /* Adjusted position to ensure spacing */ /* Ini mengatur posisi garis */
+}
+
+smart-button.button-concept .button-primary .icon {
+    width: 20px; /* Set width for icon */
+    height: 100%; /* Match height */
+    margin-left: 2px; /* Increased margin for spacing */ /* Ini mengatur jarak antara garis dan ikon */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary .icon .fa {
+    font-size: 12px; /* Adjusted font size */
+    vertical-align: middle;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+smart-button.button-concept .button-primary .icon .fa-check {
+    display: none;
+}
+
+smart-button.button-concept .button-primary.success span,
+smart-button.button-concept .button-primary:hover span {
+    left: -100%; /* Adjusted left to fit the icon */
+    width: 0 !important;
+    opacity: 0;
+}
+
+smart-button.button-concept .button-primary.success .icon,
+smart-button.button-concept .button-primary:hover .icon {
+    width: 100%;
+}
+
+smart-button.button-concept .button-primary.success .icon .fa,
+smart-button.button-concept .button-primary:hover .icon .fa {
+    font-size: 16px; /* Adjusted font size */
+}
+
+smart-button.button-concept .button-primary.success {
+    background-color: #27ae60;
+}
+
+smart-button.button-concept .button-primary.success .icon .fa-remove {
+    display: none;
+}
+
+smart-button.button-concept .button-primary.success .icon .fa-check {
+    display: inline-block;
+}
+
+smart-button.button-concept .button-primary:hover {
+    opacity: .9;
+}
+
+smart-button.button-concept .button-primary:active {
+    opacity: 1;
+}
+
+//primary Delete
+
+
+smart-button.button-concept .button-primary-delete {
+    padding: 0;
+}
+
+/* Main Styles */
+
+
+smart-button.button-concept .button-primary-delete {
+    display: flex;
+    background-color:  #e21111e0; /* Default color */
+    width: 130px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-delete span,
+smart-button.button-concept .button-primary-delete .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+smart-button.button-concept .button-primary-delete span {
+    width: auto; /* Set width to auto */
+    line-height: inherit;
+    font-size: 10px; /* Adjusted font size */
+    text-transform: uppercase;
+    margin-right: 13px; /* Added margin for space around text */ /* Ini mengatur jarak antara teks dan garis */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-delete span:after {
+    content: '';
+    background-color: #f3f3f8;
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: -6px; /* Adjusted position to ensure spacing */ /* Ini mengatur posisi garis */
+}
+
+smart-button.button-concept .button-primary-delete .icon {
+    width: 20px; /* Set width for icon */
+    height: 100%; /* Match height */
+    margin-left: 2px; /* Increased margin for spacing */ /* Ini mengatur jarak antara garis dan ikon */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-delete .icon .fa {
+    font-size: 12px; /* Adjusted font size */
+    vertical-align: middle;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+smart-button.button-concept .button-primary-delete .icon .fa-check {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-delete.success span,
+smart-button.button-concept .button-primary-delete:hover span {
+    left: -100%; /* Adjusted left to fit the icon */
+    width: 0 !important;
+    opacity: 0;
+}
+
+smart-button.button-concept .button-primary-delete.success .icon,
+smart-button.button-concept .button-primary-delete:hover .icon {
+    width: 100%;
+}
+
+smart-button.button-concept .button-primary-delete.success .icon .fa,
+smart-button.button-concept .button-primary-delete:hover .icon .fa {
+    font-size: 16px; /* Adjusted font size */
+}
+
+smart-button.button-concept .button-primary-delete.success {
+    background-color: #27ae60;
+}
+
+smart-button.button-concept .button-primary-delete.success .icon .fa-remove {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-delete.success .icon .fa-check {
+    display: inline-block;
+}
+
+smart-button.button-concept .button-primary-delete:hover {
+    opacity: .9;
+}
+
+smart-button.button-concept .button-primary-delete:active {
+    opacity: 1;
+}
+
+
+
+
+//primary edit
+
+
+smart-button.button-concept .button-primary-edit {
+    padding: 0;
+}
+
+/* Main Styles */
+
+
+smart-button.button-concept .button-primary-edit {
+    display: flex;
+    background-color:  #3498db; /* Default color */
+    width: 105px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-edit span,
+smart-button.button-concept .button-primary-edit .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+smart-button.button-concept .button-primary-edit span {
+    width: auto; /* Set width to auto */
+    line-height: inherit;
+    font-size: 10px; /* Adjusted font size */
+    text-transform: uppercase;
+    margin-right: 13px; /* Added margin for space around text */ /* Ini mengatur jarak antara teks dan garis */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-edit span:after {
+    content: '';
+    background-color: #f3f3f8;
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: -6px; /* Adjusted position to ensure spacing */ /* Ini mengatur posisi garis */
+}
+
+smart-button.button-concept .button-primary-edit .icon {
+    width: 20px; /* Set width for icon */
+    height: 100%; /* Match height */
+    margin-left: 2px; /* Increased margin for spacing */ /* Ini mengatur jarak antara garis dan ikon */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-edit .icon .fa {
+    font-size: 12px; /* Adjusted font size */
+    vertical-align: middle;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+smart-button.button-concept .button-primary-edit .icon .fa-check {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-edit.success span,
+smart-button.button-concept .button-primary-edit:hover span {
+    left: -100%; /* Adjusted left to fit the icon */
+    width: 0 !important;
+    opacity: 0;
+}
+
+smart-button.button-concept .button-primary-edit.success .icon,
+smart-button.button-concept .button-primary-edit:hover .icon {
+    width: 100%;
+}
+
+smart-button.button-concept .button-primary-edit.success .icon .fa,
+smart-button.button-concept .button-primary-edit:hover .icon .fa {
+    font-size: 16px; /* Adjusted font size */
+}
+
+smart-button.button-concept .button-primary-edit.success {
+    background-color: #27ae60;
+}
+
+smart-button.button-concept .button-primary-edit.success .icon .fa-remove {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-edit.success .icon .fa-check {
+    display: inline-block;
+}
+
+smart-button.button-concept .button-primary-edit:hover {
+    opacity: .9;
+}
+
+smart-button.button-concept .button-primary-edit:active {
+    opacity: 1;
+}
+
+//primary export
+
+
+smart-button.button-concept .button-primary-export {
+    padding: 0;
+}
+
+/* Main Styles */
+
+
+smart-button.button-concept .button-primary-export {
+    display: flex;
+    background-color:  #5ed35a; /* Default color */
+    width: 155px; /* Set width */
+    height: 30px; /* Adjusted height */
+    line-height: 30px; /* Adjusted to match height */
+    padding: 0 8px; /* Added padding for space around text */
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-export span,
+smart-button.button-concept .button-primary-export .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+smart-button.button-concept .button-primary-export span {
+    width: auto; /* Set width to auto */
+    line-height: inherit;
+    font-size: 10px; /* Adjusted font size */
+    text-transform: uppercase;
+    margin-right: 13px; /* Added margin for space around text */ /* Ini mengatur jarak antara teks dan garis */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-export span:after {
+    content: '';
+    background-color: #f3f3f8;
+    width: 2px;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    right: -6px; /* Adjusted position to ensure spacing */ /* Ini mengatur posisi garis */
+}
+
+smart-button.button-concept .button-primary-export .icon {
+    width: 20px; /* Set width for icon */
+    height: 100%; /* Match height */
+    margin-left: 2px; /* Increased margin for spacing */ /* Ini mengatur jarak antara garis dan ikon */
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+
+smart-button.button-concept .button-primary-export .icon .fa {
+    font-size: 12px; /* Adjusted font size */
+    vertical-align: middle;
+    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+smart-button.button-concept .button-primary-export .icon .fa-check {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-export.success span,
+smart-button.button-concept .button-primary-export:hover span {
+    left: -100%; /* Adjusted left to fit the icon */
+    width: 0 !important;
+    opacity: 0;
+}
+
+smart-button.button-concept .button-primary-export.success .icon,
+smart-button.button-concept .button-primary-export:hover .icon {
+    width: 100%;
+}
+
+smart-button.button-concept .button-primary-export.success .icon .fa,
+smart-button.button-concept .button-primary-export:hover .icon .fa {
+    font-size: 16px; /* Adjusted font size */
+}
+
+smart-button.button-concept .button-primary-export.success {
+    background-color: #27ae60;
+}
+
+smart-button.button-concept .button-primary-export.success .icon .fa-remove {
+    display: none;
+}
+
+smart-button.button-concept .button-primary-export.success .icon .fa-check {
+    display: inline-block;
+}
+
+smart-button.button-concept .button-primary-export:hover {
+    opacity: .9;
+}
+
+smart-button.button-concept .button-primary-export:active {
+    opacity: 1;
+}
+
+smart-drop-down-list {
+	min-height: 35px;
+	height: 100px;
+	width: 100%;
+}

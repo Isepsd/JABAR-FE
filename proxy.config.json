@@ -1,0 +1,35 @@
+[
+  {
+    "context": "/api/v1/main",
+    "target": "http://192.168.18.26:8023/portal",
+    "docs": "http://192.168.18.26:8023/portal/api/docs/",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/v1/main": ""
+    }
+  },
+  {
+    "context": "/api/v1/upload",
+    "target": "http://192.168.18.26:8051/api/v1",
+    "docs": "",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/v1/upload": ""
+    }
+  },
+  {
+    "context": "/media",
+    "target": "http://192.168.18.26:8050/portal/",
+    "docs": "",
+    "logLevel": "debug",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/media": ""
+    }
+  }
+]

@@ -1,0 +1,17 @@
+@import '~jqwidgets-scripts/jqwidgets/styles/jqx.base.css';
+@import '~jqwidgets-scripts/jqwidgets/styles/jqx.light.css';
+@import '~jqwidgets-scripts/jqwidgets/styles/jqx.energyblue.css';
+@import '~jqwidgets-scripts/jqwidgets/styles/jqx.bootstrap.css';
+// @import '~jqwidgets-scripts/jqwidgets/styles/jqx.classic.css';
+// @import '~jqwidgets-scripts/jqwidgets/styles/jqx.dark.css';
+
+/* To remove or change the background of JqxLoader */
+.jqx-loader {
+    background-color: '#fff'; /* Remove the background or set a custom color */
+    z-index: 1000; /* Ensure it is above the blur overlay */
+}
+
+/* To style the image inside the loader */
+.jqx-loader img {
+    display: none; /* Hide the loader image */
+}

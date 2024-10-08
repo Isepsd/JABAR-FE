@@ -1,0 +1,104 @@
+name: Notifikasi Telegram
+on:
+  push:
+    branches:
+      - '**'  # Semua branch
+  issues:
+    types: [opened, edited, deleted, closed, reopened]
+  issue_comment:
+    types: [created, edited, deleted]
+  pull_request:
+    types: [opened, closed, edited, reopened, synchronize]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      TELEGRAM_CHAT_ID: "-1002227360897" # -4166417908 -2227360897
+      TELEGRAM_BOT_TOKEN: "6841028983:AAETEYuwJPNzN3UYIVAy4RHVnbjw5mWzszk"
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get branch name
+      id: branch_name
+      run: echo "::set-output name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})"
+
+    - name: Kirim notifikasi pada push
+      if: github.event_name == 'push'
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ env.TELEGRAM_CHAT_ID }}
+        token: ${{ env.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.actor }} membuat commit baru:
+          Pesan commit: ${{ github.event.commits[0].message }}
+          
+          Branch: ${{ steps.branch_name.outputs.BRANCH_NAME }}
+          
+          Repositori: ${{ github.repository }}
+          
+          Lihat perubahan: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+
+    - name: Kirim notifikasi pada event issue
+      if: github.event_name == 'issues'
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ env.TELEGRAM_CHAT_ID }}
+        token: ${{ env.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.actor }} melakukan aksi pada issue:
+          Judul issue: ${{ github.event.issue.title }}
+          
+          Aksi: ${{ github.event.action }}
+          
+          Repositori: ${{ github.repository }}
+          
+          Lihat issue: ${{ github.event.issue.html_url }}
+
+    - name: Kirim notifikasi pada event komentar issue
+      if: github.event_name == 'issue_comment'
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ env.TELEGRAM_CHAT_ID }}
+        token: ${{ env.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ${{ github.actor }} mengomentari issue:
+          Judul issue: ${{ github.event.issue.title }}
+          
+          Komentar: ${{ github.event.comment.body }}
+          
+          Repositori: ${{ github.repository }}
+          
+          Lihat komentar: ${{ github.event.comment.html_url }}
+
+    - name: Kirim notifikasi pada event pull request
+      if: github.event_name == 'pull_request'
+      uses: appleboy/telegram-action@master
+      id: pr_notification
+      with:
+        to: ${{ env.TELEGRAM_CHAT_ID }}
+        token: ${{ env.TELEGRAM_BOT_TOKEN }}
+        message: |
+          Aksi pull request oleh ${{ github.actor }}:
+          Judul pull request: ${{ github.event.pull_request.title }}
+          
+          Aksi: ${{ github.event.action }}
+          
+          Repositori: ${{ github.repository }}
+          
+          Lihat pull request: ${{ github.event.pull_request.html_url }}
+
+    - name: Kirim notifikasi pada pull request yang di-merge
+      if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ env.TELEGRAM_CHAT_ID }}
+        token: ${{ env.TELEGRAM_BOT_TOKEN }}
+        message: |
+          Pull request telah di-merge oleh ${{ github.actor }}:
+          Judul pull request: ${{ github.event.pull_request.title }}
+          
+          Repositori: ${{ github.repository }}
+          
+          Lihat pull request: ${{ github.event.pull_request.html_url }}
